@@ -21,8 +21,12 @@ const SalesChart = () => {
     setLoading(true);
     setError(null);
     
-    // Configurar URL base del backend (puede venir de variable de entorno o usar proxy)
-    const API_BASE_URL = process.env.REACT_APP_API_URL || '';
+    // Configurar URL base del backend
+    // En producción: usar la URL completa del backend en Render
+    // En desarrollo: usar URL relativa para que funcione con el proxy
+    const isProduction = process.env.NODE_ENV === 'production';
+    const API_BASE_URL = process.env.REACT_APP_API_URL || 
+      (isProduction ? 'https://back-auladiser-final-project.onrender.com' : '');
     const endpoint = `${API_BASE_URL}/sales/branches/line-chart?year=${year}`;
     
     console.log('Consultando endpoint:', endpoint);
