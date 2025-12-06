@@ -85,11 +85,11 @@ const SalesChart = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-[500px] bg-gray-50 p-6">
       <div className="w-full max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="bg-indigo-600 p-6">
+        <div className="bg-slate-700 p-6">
           <h2 className="text-2xl font-bold text-white text-center">
             Reporte de Ventas Mensuales
           </h2>
-          <p className="text-indigo-100 text-center mt-2">
+          <p className="text-slate-200 text-center mt-2">
             Visualización gráfica por sucursales
           </p>
         </div>
@@ -104,7 +104,7 @@ const SalesChart = () => {
                 id="year-select"
                 value={year}
                 onChange={(e) => setYear(Number(e.target.value))}
-                className="block w-full pl-4 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md shadow-sm bg-white border hover:border-gray-400 transition-colors cursor-pointer appearance-none"
+                className="block w-full pl-4 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-slate-500 focus:border-slate-500 sm:text-sm rounded-md shadow-sm bg-white border hover:border-gray-400 transition-colors cursor-pointer appearance-none"
               >
                 {years.map((y) => (
                   <option key={y} value={y}>
@@ -123,8 +123,8 @@ const SalesChart = () => {
           <div className="relative min-h-[400px] flex items-center justify-center bg-white border-2 border-dashed border-gray-200 rounded-lg p-4">
             {loading && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-white bg-opacity-80 z-10">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
-                <p className="mt-4 text-indigo-600 font-medium">Generando gráfica...</p>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-700"></div>
+                <p className="mt-4 text-slate-700 font-medium">Generando gráfica...</p>
               </div>
             )}
 
